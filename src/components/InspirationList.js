@@ -9,6 +9,7 @@ class InspirationList extends Component {
     
     return(
       <ul>
+        <p> List </p>
         {inspirationList}
       </ul>
     )

@@ -29,7 +29,7 @@ class CreateInspiration extends Component {
     return(
       <div>
         Create Inspiration 
-        <form onSubmit={(event) => this.handleSubmit()}>
+        <form onSubmit={(event) => this.handleSubmit(event)}>
           <label> Add Video </label>
           <input type='url' value={this.state.url} onChange={(event) => this.handleChange(event)}/>
           <input type="submit" />
