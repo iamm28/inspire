@@ -4,13 +4,15 @@ class CreateInspiration extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      url: ''
+      video: '',
+      webImage: '',
     }
   }
   
   handleChange(event) {
+    const {value, name} = event.target;
     this.setState({
-      url: event.target.value
+      [name]: value
     })
   }
   
@@ -21,7 +23,8 @@ class CreateInspiration extends Component {
       inspiration: this.state,
     })
     this.setState({
-      url: '',
+      video: '',
+      webImage: '',
     })
   }
   
@@ -31,7 +34,9 @@ class CreateInspiration extends Component {
         Create Inspiration 
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label> Add Video </label>
-          <input type='url' value={this.state.url} onChange={(event) => this.handleChange(event)}/>
+          <input name='video' type='url' value={this.state.video} onChange={(event) => this.handleChange(event)}/>
+          <label> Add Image From Web </label>
+          <input name='webImage' type='url' value={this.state.webImage} onChange={(event) => this.handleChange(event)}/>
           <input type="submit" />
         </form>
       </div>

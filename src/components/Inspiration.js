@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-// import YouTube from 'react-youtube';
+import YouTube from 'react-youtube';
 
 class Inspiration extends Component {
   render() {
@@ -7,16 +7,18 @@ class Inspiration extends Component {
       height: '390',
       width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
+        autoplay: 0
       }
     };
-    const vid = this.props.url.split('')
-    console.log(vid) 
+    const vid = this.props.video.split('v=')[1]
     return (
       <div>
-        
-        <a href={this.props.url}>{this.props.url}</a>
-        <iframe width="420" height="315" src={this.props.url} key={this.props.url}></iframe>
+      <YouTube
+        videoId={vid}
+        opts={opts}
+        onReady={this._onReady}
+      />
+      
       </div>
     )
   }
@@ -24,8 +26,6 @@ class Inspiration extends Component {
 
 export default Inspiration;
 
-// <YouTube
-//   videoId="2g811Eo7K8U"
-//   opts={opts}
-//   onReady={this._onReady}
-// />
+//<iframe width="420" height="315" src={this.props.url} key={this.props.url}></iframe>
+// <a href={this.props.url}>{this.props.url}</a>
+//tdmyoMe4iHM miracle
