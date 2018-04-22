@@ -19,8 +19,12 @@ class CreateInspiration extends Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.store.dispatch({
-      type: 'ADD_INSPIRATION',
-      inspiration: this.state,
+      type: 'ADD_VIDEO',
+      video: this.state.video,
+    })
+    this.props.store.dispatch({
+      type: 'ADD_WEB_IMAGE',
+      webImage: this.state.webImage,
     })
     this.setState({
       video: '',

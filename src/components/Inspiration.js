@@ -11,6 +11,7 @@ class Inspiration extends Component {
       }
     };
     const vid = this.props.video.split('v=')[1]
+    const img = this.props.webImage 
     return (
       <div>
       <YouTube
@@ -18,14 +19,10 @@ class Inspiration extends Component {
         opts={opts}
         onReady={this._onReady}
       />
-      
+      <img src={img} height='390' width='640'/>
       </div>
     )
   }
 }
 
 export default Inspiration;
-
-//<iframe width="420" height="315" src={this.props.url} key={this.props.url}></iframe>
-// <a href={this.props.url}>{this.props.url}</a>
-//tdmyoMe4iHM miracle

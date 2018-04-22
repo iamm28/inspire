@@ -1,13 +1,13 @@
 export default function manageTodo(state = {
-  inspiration: [],
+  videos: [], webImages: [],
 }, action) {
   switch (action.type) {
-    case 'ADD_INSPIRATION':
-      return { inspiration: state.inspiration.concat(action.inspiration.video)}
+    case 'ADD_VIDEO':
+      return { ...state, videos: state.videos.concat(action.video)}
+    case 'ADD_WEB_IMAGE':
+      debugger
+      return { ...state, webImages: state.webImages.concat(action.webImage)}
     default:
       return state;
   }
 }
-
-
-//, state.inspiration.webImage.concat(action.inspiration.webImage) 
