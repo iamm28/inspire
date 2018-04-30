@@ -15,12 +15,11 @@ class InspirationList extends Component {
       return <FileInspiration key={index} file={f}/>
     })
     return(
-      <ul>
-        <p> List </p>
+      <div className="grid">
         {videoList}
         {webImageList}
         {fileList}
-      </ul>
+      </div>
     )
   }
 }

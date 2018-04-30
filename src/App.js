@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CreateInspiration from './components/CreateInspiration'
 import InspirationList from './components/InspirationList'
-// import './App.css';
+import './App.css';
 
 class App extends Component {
   render() {

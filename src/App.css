@@ -1,13 +1,30 @@
-.App {
+label {
+  font-size: large;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.grid div {
+  border: 10px solid rgb(0,95,107);
+  border-radius: 5px;
+  padding: 0.2em;
+}
+
+.form {
+  border: 10px solid rgb(0,95,107);
+  border-radius: 5px;
+  padding: 0.2em;
+  /* background-color: rgb(0,95,107); */
+}
+/* .App {
   text-align: center;
-}
+} */
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+/* .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -20,9 +37,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+} */
