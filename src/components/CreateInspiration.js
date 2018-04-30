@@ -42,18 +42,24 @@ class CreateInspiration extends Component {
     this.fileUpload(this.state.file).then((response)=>{
       console.log(response.data);
     })
-    this.props.store.dispatch({
-      type: 'ADD_FILE',
-      file: this.state.file,
-    })
-    this.props.store.dispatch({
-      type: 'ADD_VIDEO',
-      video: this.state.video,
-    })
-    this.props.store.dispatch({
-      type: 'ADD_WEB_IMAGE',
-      webImage: this.state.webImage,
-    })
+    if (this.state.file != undefined) {
+      this.props.store.dispatch({
+        type: 'ADD_FILE',
+        file: this.state.file,
+      })
+    }
+    if (this.state.video != undefined) {
+      this.props.store.dispatch({
+        type: 'ADD_VIDEO',
+        video: this.state.video,
+      })
+    }
+    if (this.state.webImage != undefined) {
+      this.props.store.dispatch({
+        type: 'ADD_WEB_IMAGE',
+        webImage: this.state.webImage,
+      })
+    }
     this.setState({
       video: '',
       webImage: '',
@@ -68,7 +74,7 @@ class CreateInspiration extends Component {
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label> Add File From Computer </label>
           <input name='file' type='file' value={this.state.file} onChange={(event) => this.handleChangeFile(event)}/>
-          <label> Add Video </label>
+          <label> Add YouTube Video </label>
           <input name='video' type='url' value={this.state.video} onChange={(event) => this.handleChange(event)}/>
           <label> Add Image From Web </label>
           <input name='webImage' type='url' value={this.state.webImage} onChange={(event) => this.handleChange(event)}/>

@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import Inspiration from './Inspiration'
+import WebImage from './WebImage'
+import YouTubeVideo from './YouTubeVideo'
 import FileInspiration from './FileInspiration'
 
 class InspirationList extends Component {
   render() {
     const videoList = this.props.store.getState().videos.map((v, index) => {
-      return <Inspiration key={index} video={v}/>
+      return <YouTubeVideo key={index} video={v}/>
     })
     const webImageList = this.props.store.getState().webImages.map((w, index) => {
-      return <Inspiration key={index} webImage={w}/>
+      return <WebImage key={index} webImage={w}/>
     })
     const fileList = this.props.store.getState().files.map((f, index) => {
       return <FileInspiration key={index} file={f}/>
@@ -24,4 +25,4 @@ class InspirationList extends Component {
   }
 }
 
-export default InspirationList
+export default InspirationList;
