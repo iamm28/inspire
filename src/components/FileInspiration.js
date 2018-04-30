@@ -5,7 +5,7 @@ class FileInspiration extends Component {
     // console.log(this.props.file)
     return(
       <div>
-        {<img src={`${this.props.file}`} height='390' width='640'/>}
+        {<img alt={`${this.props.file}`} src={`${this.props.file}`} height='390' width='640'/>}
       </div>
     )
   }
