@@ -17,7 +17,6 @@ class YouTubeVideo extends Component {
       <div>
         <YouTube
           videoId={vid}
-          opts={opts}
           onReady={this._onReady}
         />
       </div>

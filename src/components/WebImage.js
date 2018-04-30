@@ -5,7 +5,7 @@ class WebImage extends Component {
 
     return(
       <div>
-        {<img alt={`${this.props.webImage}`} src={`${this.props.webImage}`} height='390' width='640'/>}
+        {<img alt={`${this.props.webImage}`} src={`${this.props.webImage}`} width="90%"/>}
       </div>
     )
   }

@@ -2,23 +2,29 @@ label {
   font-size: large;
 }
 
+body  {
+    background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/cork-board.jpg");
+    background-color: #cccccc;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-auto-rows: 390px;
+  grid-gap: 10px 10px;
 }
 
 .grid div {
-  border: 10px solid rgb(0,95,107);
+  border: 5px solid rgb(0,95,107);
   border-radius: 5px;
   padding: 0.2em;
 }
 
 .form {
-  border: 10px solid rgb(0,95,107);
+  border: 5px solid rgb(0,95,107);
   border-radius: 5px;
   padding: 0.2em;
-  /* background-color: rgb(0,95,107); */
+  margin-bottom: 10px;
+  background-color: rgb(0,95,107);
 }
 /* .App {
   text-align: center;
