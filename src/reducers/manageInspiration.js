@@ -1,5 +1,5 @@
 export default function manageTodo(state = {
-  videos: [], webImages: [], files: [], audioFiles: [],
+  videos: [], webImages: [], files: [], audioFiles: [], quotes: [],
 }, action) {
   switch (action.type) {
     case 'ADD_FILE':
@@ -10,6 +10,8 @@ export default function manageTodo(state = {
       return { ...state, webImages: state.webImages.concat(action.webImage)}
     case 'ADD_AUDIO':
       return { ...state, audioFiles: state.audioFiles.concat(action.audioFile)}
+    case 'ADD_QUOTE':
+      return { ...state, quotes: state.quotes.concat(action.quote)}
     default:
       return state;
   }

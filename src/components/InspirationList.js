@@ -3,6 +3,7 @@ import WebImage from './WebImage'
 import YouTubeVideo from './YouTubeVideo'
 import FileInspiration from './FileInspiration'
 import AudioFile from './AudioFile'
+import Quote from './Quote'
 
 class InspirationList extends Component {
   render() {
@@ -22,12 +23,17 @@ class InspirationList extends Component {
       return <AudioFile key={index} audioFile={a} />
     })
 
+    const quoteList = this.props.store.getState().quotes.map((q,index) => {
+      return <Quote key={index} quote={q} />
+    })
+
     return(
       <div className="grid">
         {videoList}
         {webImageList}
         {fileList}
         {audioFileList}
+        {quoteList}
       </div>
     )
   }

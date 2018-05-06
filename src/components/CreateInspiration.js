@@ -9,6 +9,7 @@ class CreateInspiration extends Component {
       webImage: undefined,
       file: undefined,
       audioFile: undefined,
+      quote: undefined,
     }
   }
 
@@ -67,11 +68,18 @@ class CreateInspiration extends Component {
         audioFile: this.state.audioFile
       })
     }
+    if (this.state.quote !== undefined) {
+      this.props.store.dispatch({
+        type: 'ADD_QUOTE',
+        quote: this.state.quote
+      })
+    }
     this.setState({
       video: '',
       webImage: '',
       file: '',
       audioFile: '',
+      quote: '',
     })
   }
 
@@ -88,6 +96,9 @@ class CreateInspiration extends Component {
           <input name='webImage' type='url' value={this.state.webImage} onChange={(event) => this.handleChange(event)}/><br/>
           <label> Add Audio File </label>
           <input name='audioFile' type='file' value={this.state.audioFile} onChange={(event) => this.handleChange(event)}/><br/>
+          <label> Add Quote </label>
+          <input name='quote' type='text' value={this.state.quote} onChange={(event) => this.handleChange(event)}/><br/>
+
           <input type="submit" />
         </form>
       </div>
