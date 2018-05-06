@@ -8,6 +8,7 @@ class CreateInspiration extends Component {
       video: undefined,
       webImage: undefined,
       file: undefined,
+      audioFile: undefined,
     }
   }
 
@@ -60,10 +61,17 @@ class CreateInspiration extends Component {
         webImage: this.state.webImage,
       })
     }
+    if (this.state.audioFile !== undefined) {
+      this.props.store.dispatch({
+        type: 'ADD_AUDIO',
+        audioFile: this.state.audioFile
+      })
+    }
     this.setState({
       video: '',
       webImage: '',
       file: '',
+      audioFile: '',
     })
   }
 
@@ -78,6 +86,8 @@ class CreateInspiration extends Component {
           <input name='video' type='url' value={this.state.video} onChange={(event) => this.handleChange(event)}/><br/>
           <label> Add Image From Web </label>
           <input name='webImage' type='url' value={this.state.webImage} onChange={(event) => this.handleChange(event)}/><br/>
+          <label> Add Audio File </label>
+          <input name='audioFile' type='file' value={this.state.audioFile} onChange={(event) => this.handleChange(event)}/><br/>
           <input type="submit" />
         </form>
       </div>
