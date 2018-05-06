@@ -14,3 +14,4 @@ class WebImage extends Component {
 export default WebImage;
 
 //height='390' width='640'
+// https://cdn-images-1.medium.com/max/1600/0*zj48hNGvARXqAXau.jpg
