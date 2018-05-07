@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 const Navbar = (props) => {
   return (
     <div id="navbar">
-      <NavLink to="/profile" exact className="nav-link right">
+      <NavLink to="/profile" exact className="nav-link right"
       activeStyle={{
         color: '#ffffff'
       }}
-      Profile </NavLink>
+      >Profile </NavLink>
       <NavLink to="/signup" exact className="nav-link right"
       activeStyle={{
         color: '#ffffff'

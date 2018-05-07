@@ -88,7 +88,7 @@ class CreateInspiration extends Component {
       <div className="form">
         <h1>Create Inspiration</h1>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <label> Add File From Computer </label>
+          <label> Upload From Computer </label>
           <input name='file' type='file' value={this.state.file} onChange={(event) => this.handleChangeFile(event)}/><br/>
           <label> Add YouTube Video </label>
           <input name='video' type='url' value={this.state.video} onChange={(event) => this.handleChange(event)}/><br/>

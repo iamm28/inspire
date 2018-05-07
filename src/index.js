@@ -8,18 +8,18 @@ import { BrowserRouter } from 'react-router-dom'
 
 import manageInspiration from './reducers/manageInspiration'
 // import createStore from './createStore'
-import { createStore} from 'redux';
+import { createStore, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk'
 
 
-
-let store= createStore(manageInspiration)
+let store= createStore(manageInspiration, applyMiddleware(thunk))
 
 export function render(){
   ReactDOM.render((
-    <Provider >
+    <Provider store={store}>
       <BrowserRouter>
-        <App store={store}/>
+        <App />
       </BrowserRouter>
     </Provider>
   ), document.getElementById('root'));
@@ -33,3 +33,8 @@ export function render(){
 store.dispatch({type: '@@INIT'})
 
 registerServiceWorker();
+// <Provider >
+  // <BrowserRouter>
+    // <App store={store}/>
+  // </BrowserRouter>
+// </Provider>

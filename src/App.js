@@ -9,24 +9,16 @@ import FileInspiration from './components/FileInspiration'
 import AudioFile from './components/AudioFile'
 import Quote from './components/Quote'
 import { Switch, Route, Redirect } from 'react-router-dom';
+import MainContainer from './components/MainContainer'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+
         <Navbar />
-        <Switch>
-          <Route exact path='/inspiration-board' component={ InspirationList }/>
-          <Route exact path='/profile' component={ CreateInspiration }/>
-          <Route exact path='/audio' component={ AudioFile }/>
-          <Route exact path='/video' component={ YouTubeVideo }/>
-          <Route exact path='/quotes' component={ Quote }/>
-          <Route exact path='/Images' component={ WebImage }/>
-          <Route exact path='/Files' component={ FileInspiration }/>
-          <Redirect exact from="/" to="/inspiration-board" />
-        </Switch>
-        <CreateInspiration store={this.props.store} />
-        <InspirationList store={this.props.store} />
+        <MainContainer/>
+
       </div>
     );
   }
@@ -35,9 +27,19 @@ class App extends Component {
 export default App;
 
 
+// <Switch>
+//   <Route exact path='/inspiration-board' component={ InspirationList }/>
+//   <Route exact path='/profile' component={ CreateInspiration }/>
+//   <Route exact path='/audio' component={ AudioFile }/>
+//   <Route exact path='/video' component={ YouTubeVideo }/>
+//   <Route exact path='/quotes' component={ Quote }/>
+//   <Route exact path='/images' component={ WebImage }/>
+//   <Route exact path='/files' component={ FileInspiration }/>
+//   <Redirect exact from="/" to="/inspiration-board" />
+// </Switch>
 
-
-
+// <CreateInspiration store={this.props.store} />
+// <InspirationList store={this.props.store} />
 
 // <Route exact path='/login' component={ LogIn }/>
 // <Route exact path='/signup' component={ SignUp }/>
